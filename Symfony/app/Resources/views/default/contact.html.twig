@@ -1,0 +1,11 @@
+{% block body %}
+    {% for liste in listes %}
+		<div>
+			{{liste.contact.nom}}
+			{{liste.contact.prenom}}
+			<a href="{{ path('delete',{id:liste.contact.id})}}">supprimer des contacts</a>
+		
+		</div>
+		
+	{% endfor %}
+{% endblock %}

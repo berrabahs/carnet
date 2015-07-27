@@ -1,0 +1,11 @@
+{% block body %}
+    {% for liste in listes %}
+		<div>
+			{{liste.nom}}
+			{{liste.prenom}}
+			<a href="{{ path('ajout',{id:liste.id})}}">ajout aux contact</a>
+		
+		</div>
+		
+	{% endfor %}
+{% endblock %}

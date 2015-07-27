@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+{% if app.user and is_granted("ROLE_USER")%}
+    <h1>Modification des données personnelles</h1>
+    {{ form(createUserForm, {'attr' : {novalidate : 'novalidate'}}) }}
+{% else %}
+    <p>Vous n'êtes pas connecté</p>
+    <a href=" {{ path('home') }} ">Retour à la page d'accueil</a>
+{% endif %}
+
+{% endblock %}

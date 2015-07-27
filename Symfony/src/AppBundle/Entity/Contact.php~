@@ -1,0 +1,61 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contact
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\ContactRepository")
+ */
+class Contact
+{
+   /** @ORM\Id @ORM\ManyToOne(targetEntity="User")
+      */
+    private $proprietaire;
+    /** @ORM\Id @ORM\ManyToOne(targetEntity="User") */
+    private $contact;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateAjout", type="datetime")
+     */
+    private $dateAjout;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set dateAjout
+     *
+     * @param \DateTime $dateAjout
+     * @return Contact
+     */
+    public function setDateAjout($dateAjout)
+    {
+        $this->dateAjout = $dateAjout;
+
+        return $this;
+    }
+
+    /**
+     * Get dateAjout
+     *
+     * @return \DateTime 
+     */
+    public function getDateAjout()
+    {
+        return $this->dateAjout;
+    }
+}
